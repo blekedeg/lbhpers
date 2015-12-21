@@ -1,0 +1,55 @@
+{{ if posts }}
+
+	{{ posts }}
+
+		<div class="post">
+
+			<h3><a href="{{ url }}">{{ title }}</a></h3>
+
+			<div class="meta">
+
+			<div class="date-post">
+				<!--
+				{{ helper:lang line="news:posted_label" }}
+				<span>{{ helper:date timestamp=created_on }}</span>
+				-->
+				{{ date }}
+			</div>
+
+			{{ if category }}
+			<div class="category">
+				{{ helper:lang line="news:category_label" }}
+				<span><a href="{{ url:site }}news/category/{{ category:slug }}">{{ category:title }}</a></span>
+			</div>
+			{{ endif }}
+
+			{{ if keywords }}
+			<div class="keywords">
+				{{ keywords }}
+					<span><a href="{{ url:site }}news/tagged/{{ keyword }}">{{ keyword }}</a></span>
+				{{ /keywords }}
+			</div>
+			{{ endif }}
+
+			</div>
+
+			<div class="preview">
+				<img src="{{ thumb_100x100 }}" style="float:left; margin:7px 10px 5px 0;" />
+				<div style="float:left; width:554px;">{{ preview }}</div>
+				<div class="cl"></div>
+			</div>
+
+			<p style="margin:0 0 20px 0"><a href="{{ url }}">{{ helper:lang line="news:read_more_label" }}</a></p>
+
+		</div>
+
+	{{ /posts }}
+
+	{{ pagination }}
+	<div class="cl"></div>
+
+{{ else }}
+	
+	{{ helper:lang line="news:currently_no_posts" }}
+
+{{ endif }}

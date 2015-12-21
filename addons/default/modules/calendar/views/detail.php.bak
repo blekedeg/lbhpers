@@ -1,0 +1,22 @@
+<style>
+.calendar_list {padding:0px !important;}
+.calendar_list .calendar_list_heading {padding:0px !important;}
+.snap {padding:0px !important;}
+</style>
+
+<?php 
+$post = $data_read;
+?>
+
+<div class="post">
+
+	<h3><?php echo $post->event_title ?></h3>
+	<div class="date-post"><?php echo indonesian_date($post->event_date_begin) ?></div>
+
+	<div class="body">
+		<img src="<?php echo $post->thumb_detail ?>" style="float:left; margin:7px 10px 5px 0;" />
+		<span><?php echo stripslashes($post->event_content) ?></span>
+		<div class="cl"></div>
+	</div>
+
+</div>
