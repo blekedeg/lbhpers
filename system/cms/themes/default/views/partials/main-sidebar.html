@@ -1,0 +1,13 @@
+<!-- Box -->
+<div class="box">
+    <h2>Video</h2>
+    <ul class="line">
+        {{ videos:posts limit="4" }}
+        <li style="width:156px">
+        <a class="frm" href="{{ url }}"><img src="{{ thumb_154x110 }}" alt="{{ title }}" width="154" height="110" /></a>
+        <a href="{{ url }}">{{ title }}</a></li>
+        {{ /videos:posts }}
+    </ul>
+    <div class="cl">&nbsp;</div>
+</div>
+<!-- End Box -->

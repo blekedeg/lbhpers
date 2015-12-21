@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>{{ settings:site_name }}&nbsp;&bull;&nbsp;{{ template:title }}</title>
+	<base href="<?php echo base_url($this->theme->path) ?>/" />
+	{{ template:metadata }}
+	<meta name="description" content="Website resmi LBH Pers">
+	<meta name="keywords" content="lbh,pers,aliansi,organisasi,jurnalis,wartawan,pewarta,indonesia,pusat">
+	<meta name="viewport" content="width=device-width">
+
+	<link rel="stylesheet" href="css/bootstrap-yeti.min.css?v=1421694037">
+	<link rel="stylesheet" href="css/main.css?v=1429397396">
+	<script async="" src="js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+</head>
+<body>
+
+<!--[if lt IE 7]>
+<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+<![endif]-->
+
+<header>
+	
+	<!-- Header -->
+	{{ theme:partial name="header" }}
+	<!-- End Header -->
+	
+</header>
+
+<div class="container content">
+	
+	{{ theme:partial name="breadcrumbs" }}
+	
+	<div class="row">
+		<div class="col-sm-8">
+			
+			{{ session:messages success="success-box" notice="notice-box" error="error-box" }}
+			
+			<!-- Body -->
+			{{ template:body }}
+			<!-- End Body -->
+			
+		</div>
+		
+		<div class="col-sm-4">
+			<div class="row">
+				
+				{{ download:posts limit="5" }}
+				<div><a href="{{ download_file }}" download="{{ title }}{{ download_ext }}"><img alt="" src="{{ cover_thumb }}" style="width: 300px; height: 76px;"></a></div>
+				<div>&nbsp;</div>
+				{{ /download:posts }}
+				
+				<div><a href="#"><img alt="" src="img/Poster.PNG" style="width: 300px; height: 426px;"></a></div>
+				<div>&nbsp;</div>
+				<div><a href="#"><img alt="" src="img/Poster Perpanjangan.PNG" style="width: 300px; height: 422px;"></a></div>
+				<div>&nbsp;</div>
+				<div>&nbsp;</div>
+				<div><a href="#" target="_blank"><img alt="" src="img/Poster Isu Perburuhan.PNG" style="width: 300px; height: 425px;"></a></div>
+				<div>&nbsp;</div>
+				<div><a href="#" style="line-height: 1.6em;"><img alt="" src="img/banner-media-online.gif" style="width: 300px; height: 293px;"></a></div>
+			</div>
+				
+			<div class="row"></div>
+			<div class="row"></div>
+		</div>
+
+	</div>
+
+</div>
+
+<footer>
+	
+	<!-- Footer -->
+	{{ theme:partial name="footer" }}
+	<!-- End Footer -->
+	
+</footer>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.easing.1.3.js"></script>
+<script src="js/jquery.quicksand.js"></script>
+<script src="js/jquery.elevateZoom-3.0.8.min.js"></script>
+<script src="js/main.js"></script>
+
+<div id="scroll-to-top" style="display: none;"><span class="glyphicon glyphicon-circle-arrow-up"></span></div>
+
+<div class="modal fade" id="media-preview">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h4 class="modal-title">...</h4>
+      </div>
+      <div class="modal-body">
+        <p>...</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</body>
+</html>

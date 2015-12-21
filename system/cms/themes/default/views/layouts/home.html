@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{{ settings:site_name }}&nbsp;&bull;&nbsp;{{ template:title }}</title>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	<base href="<?php echo base_url($this->theme->path) ?>/" />
+	<link rel="stylesheet" href="<?php echo base_url($this->theme->path) ?>/css/style.css" type="text/css" media="all" />
+	<!--[if IE]>
+	<style type="text/css" media="screen">
+	.shell {background-image: none;filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/shell-bg.png', sizingMethod='scale');}
+	.box{background-image: none;filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/dot.png', sizingMethod='scale');}
+	.transparent-frame .frame{background-image: none;filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/transparent-frame.png', sizingMethod='image');}
+	.search .field{padding-bottom:9px}
+	</style>
+	<![endif]-->
+	<script src="js/jquery/jquery.js"></script>
+	<script src="js/jquery-func.js"></script>
+	<script src="js/jquery.cycle.all.js"></script>
+
+	{{ template:metadata }}
+
+	<style>
+	#slide-caption{position:absolute; background:rgba(0, 0, 0, 0.7); color:#ffffff; padding:10px; bottom:4px; z-index:600; width:670px;}
+	#slide-caption a{font-weight:bold;}
+	#slide-nav{position:absolute; top:10px; right:10px; z-index:600;}
+	#slide-nav a{background:#ffcc00; color:#ffffff; padding:2px 4px; margin:0 0 0 10px; border:1px solid #cccccc; text-decoration:none;}
+	#slide-nav a.activeSlide{background:green;}
+	</style>
+</head>
+<body>
+<!-- Shell -->
+<div class="shell">
+  
+  	<!-- Header -->
+  	{{ theme:partial name="header" }}
+  	<!-- End Header -->
+  
+  	<!-- Content -->
+  	<div id="content">
+    	
+    	<!-- Sidebar -->
+    	{{ theme:partial name="sidebar" }}
+    	<!-- End Sidebar -->
+
+	    <!-- Main -->
+	    <div id="main">
+	      	<!-- Top Image -->
+	      	<div class="transparent-frame" style="position:relative">
+				<!-- <div class="frame">&nbsp;</div> -->
+				<div id="slide-nav"></div>
+				<ul id="slider">
+					{{ news:posts }}
+			        <li><img src="{{ thumb_690x370 }}"  width="690" height="370" data-title="{{ title }}" data-desc="{{ intro }}" data-url="{{ url }}" /></li>
+			        {{ /news:posts }}
+		      	</ul>
+				<div id="slide-caption"></div>
+			</div>
+			<div class="cl">&nbsp;</div>
+			<!-- End Top Image -->
+		  
+		    <!-- Main Sidebar -->
+		    {{ theme:partial name="main-sidebar" }}
+		    <!-- End Main Sidebar -->
+		</div>
+	    <!-- End Main -->
+	    <div class="cl">&nbsp;</div>
+  
+  	</div>
+  	<!-- End Content -->
+  
+  	<!-- Footer -->
+  	{{ theme:partial name="footer" }}
+  	<!-- End Footer -->
+  
+</div>
+<!-- End Shell -->
+
+<script>
+$(function() {
+	$('#slider').cycle({
+		fx: 'fade', //'uncover',
+		sync: false,
+		speed: 1000,
+		//pause: true,
+		pager: '#slide-nav',
+		after: function(a) {
+			var html = '\
+				<a href="' + $('#slider li:visible img').data('url') + '">' + $('#slider li:visible img').data('title') + '</a>\
+				<p>' + $('#slider li:visible img').data('desc') + '</p>\
+			';
+			
+			$('#slide-caption').html(html);
+		}
+	});
+});
+</script>
+
+</body>
+</html>

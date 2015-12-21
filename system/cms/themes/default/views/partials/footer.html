@@ -1,0 +1,17 @@
+<div id="footer">
+	<p>&copy; 2015. Hak cipta dilindungi undang-undang.</p>
+</div>
+
+<script>
+var image = document.getElementsByTagName('img');
+for (var i = 0; i < image.length; i++) {
+	image[i].src = image[i].src + '?ts=' + new Date().getTime();
+}
+
+var anchor = document.getElementsByTagName('a');
+for (var i = 0; i < anchor.length; i++) {
+	if (anchor[i].href.indexOf('#') != -1) {
+  		anchor[i].href = 'javascript:void(0)';
+  	}
+}
+</script>

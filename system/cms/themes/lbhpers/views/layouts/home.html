@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>{{ settings:site_name }}&nbsp;&bull;&nbsp;{{ template:title }}</title>
+	<base href="<?php echo base_url($this->theme->path) ?>/" />
+	{{ template:metadata }}
+	<meta name="description" content="Website resmi LBH Pers">
+	<meta name="keywords" content="lbh,pers,aliansi,organisasi,jurnalis,wartawan,pewarta,indonesia,pusat">
+	<meta name="viewport" content="width=device-width">
+
+	<link rel="stylesheet" href="css/bootstrap-yeti.min.css">
+	<link rel="stylesheet" href="css/da-slide1.css?v=1421694123">
+	<link rel="stylesheet" href="css/flexslider.css?v=1421694123">
+	<link rel="stylesheet" href="css/main.css?v=1429397396">
+	<script async="" src="js/analytics.js"></script>
+	<!-- <script id="twitter-wjs" src="js/widgets.js"></script> -->
+	<script src="js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+	
+	<style>
+	.blekepet-slider{height:344px; background:transparent url('img/aji-bg.original.jpg') repeat 0% 0%; box-shadow:0px 3px 3px rgba(0,0,0,0.2), 0px -2px 1px #fff; position:relative;}
+	#slider{list-style-type:none;}
+	#slide-caption{position:absolute; padding:10px; top:0px; z-index:600; width:485px; right:0px; letter-spacing:-1px;}
+	#slide-caption a{font-size:30px; font-weight:bold; color:#ffffff;}
+	#slide-nav{position:absolute; top:10px; z-index:600;}
+	#slide-nav a{font-size:12px; background:#ffcc00; color:#ffffff; padding:2px 4px; margin:0 0 0 10px; border:1px solid #cccccc; text-decoration:none;}
+	#slide-nav a.activeSlide{background:green;}
+	</style>
+</head>
+<body>
+
+<!--[if lt IE 7]>
+<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+<![endif]-->
+
+<header>
+	
+	<!-- Header -->
+	{{ theme:partial name="header" }}
+	<!-- End Header -->
+	
+</header>
+
+<div class="container content">
+	
+	<div class="row">
+		<div class="blekepet-slider">
+			<div id="slide-nav"></div>
+			<ul id="slider">
+				{{ slideshow:posts }}
+				<li><img src="{{ image }}"  width="485" height="344" data-title="{{ title }}" data-desc="{{ intro }}" data-url="{{ url }}" /></li>
+				{{ /slideshow:posts }}
+			</ul>
+			<div id="slide-caption"></div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-8">
+			<div class="row">
+				
+				<!-- Berita -->
+				<div class="col-md-6">
+					<h3 class="l-subtitle"><a href="<?php echo site_url('news') ?>" target="blank">Berita <span class="pull-right glyphicon glyphicon-share-alt"></span></a></h3>
+					<ul class="l-list">
+						{{ news:posts limit="5" }}
+						<li>
+							<div class="pull-left" style="width:48px;height:100%;padding:4px 0;overflow:hidden">
+								<img class="thumbnail" style="height:100%" src="{{ thumb_70x70 }}" alt="">
+							</div>
+							<a style="margin-left: 54px" href="{{ url }}" class="tips" title="" data-original-title="{{ title }}">{{ title }} <span style="color:#FF0000">&raquo;</span></a>
+						</li>
+						{{ /news:posts }}
+					</ul>
+				</div>
+				<!-- / Berita -->
+				
+				<!-- Agenda -->
+				<div class="col-md-6">
+					<h3 class="l-subtitle"><a href="#" target="blank">Agenda <span class="pull-right glyphicon glyphicon-share-alt"></span></a></h3>
+					<ul class="l-list">
+						{{ calendar:read limit="5" repeated="yes" }}
+						<li>
+							<a href="{{ url }}" class="tips" title="" data-original-title="{{ title }}">{{ title }}</a>
+							<div style="font-size:12px">{{ f_date_start }}</div>
+						</li>
+						{{ /calendar:read }}
+					</ul>
+				</div>
+				<!-- / Agenda -->
+				
+			</div>
+
+			<div class="row">
+				
+				<!-- Program -->
+				<div class="col-md-6">
+					<h3 class="l-subtitle"><a href="#" target="blank">Program <span class="pull-right glyphicon glyphicon-share-alt"></span></a></h3>
+					<ul class="l-list">
+						{{ program:posts limit="5" }}
+						<li>
+							<div class="pull-left" style="width:48px;height:100%;padding:4px 0;overflow:hidden"><img class="thumbnail" style="height:100%" src="{{ thumb_70x70 }}" /></div>
+							<a style="margin-left: 54px" href="{{ url }}" class="tips" title="" data-original-title="{{ title }}">{{ title }} <span style="color:#FF0000">&raquo;</span></a>
+						</li>
+						{{ /program:posts }}
+					</ul>
+				</div>
+				<!-- / Program -->
+				
+				<!-- Gallery -->
+				<div class="col-md-6">
+					<h3 class="l-subtitle"><a href="#" target="blank">Gallery Foto <span class="pull-right glyphicon glyphicon-share-alt"></span></a></h3>
+					<ul class="l-gallery">
+						<li style="overflow:hidden">
+							<h4><a href="http://aji.or.id/read/gallery-foto/46.html">Training on Organizing the Unorganized, Padang</a></h4>
+							<img src="img/IMG_64721.JPG" />
+						</li>
+						<li style="overflow:hidden">
+							<h4><a href="http://aji.or.id/read/gallery-foto/45.html">Workshop BPJS, Palembang</a></h4>
+							<img src="img/IMG_5110.JPG" />
+						</li>
+					</ul>        
+				</div>
+				<!-- / Gallery -->
+				
+			</div>
+
+			<div class="row">
+				
+				<!-- Kasus -->
+				<div class="col-md-6">
+					<h3 class="l-subtitle"><a href="#" target="blank">Kasus <span class="pull-right glyphicon glyphicon-share-alt"></span></a></h3>
+					<ul class="l-list">
+						{{ kasus:posts limit="5" }}
+						<li>
+							<div class="pull-left" style="width:48px;height:100%;padding:4px 0;overflow:hidden"><img src="{{ thumb_70x70 }}" class="thumbnail" style="height:100%" /></div>
+							<a style="margin-left: 54px" href="{{ url }}" class="tips" title="" data-original-title="{{ title }}">{{ title }} <span style="color:#FF0000">&raquo;</span></a>
+						</li>
+						{{ /kasus:posts }}
+					</ul>
+				</div>
+				<!-- / Kasus -->
+				
+				<div class="col-md-6">
+					<h3 class="l-subtitle"><a href="#" target="blank">Press Release <span class="pull-right glyphicon glyphicon-share-alt"></span></a></h3>
+					<ul class="l-list">
+						<li>
+							<a href="#" class="tips" title="" data-original-title="">Siaran Pers: AJI: Kebebasan Berpendapat dan Mendapatkan Informasi dalam Ancaman <span style="color:#FF0000">&raquo;</span></a>
+						</li>
+						<li>
+							<a href="#" class="tips" title="" data-original-title="">Siaran Pers AJI Bandung: Negara Melindungi Pekerja Media untuk Mendapatkan THR <span style="color:#FF0000">&raquo;</span></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-12">
+					<div id="map-canvas"></div>
+				</div>
+			</div>
+
+		</div>
+    
+		<div class="col-md-4">
+			<br />
+			<div class="row">
+				
+				{{ download:posts limit="5" }}
+				<div><a href="{{ download_file }}" download="{{ title }}{{ download_ext }}"><img alt="" src="{{ cover_thumb }}" style="width: 300px; height: 76px;"></a></div>
+				<div>&nbsp;</div>
+				{{ /download:posts }}
+				
+				<div><a href="#"><img alt="" src="img/kekerasan300.jpg" style="width: 300px; height: 173px;"></a></div>
+				<div>&nbsp;</div>
+				<div><a href="#" target="_blank"><img alt="" src="img/Poster.PNG" style="width: 300px; height: 426px;"></a></div>
+				<div>&nbsp;</div>
+				<div>
+					<div><a href="#" target="_blank"><img alt="" src="img/Poster Perpanjangan.PNG" style="width: 300px; height: 422px;"></a></div>
+					<div>&nbsp;</div>
+					<div><a href="#" target="_blank"><img alt="" src="img/Poster Isu Perburuhan.PNG" style="width: 300px; height: 425px;"></a></div>
+					<div>&nbsp;</div>
+				</div>
+				<div><a href="#" style="line-height: 1.6em;"><img alt="" src="img/banner-media-online.gif" style="width: 300px; height: 293px;"></a></div>
+				<div>
+					<p>&nbsp;</p>
+				</div>
+			</div>
+			<div class="row"></div>
+			<div class="row"></div>
+		</div>
+	</div>
+
+</div>
+
+
+<footer>
+	
+	<!-- Footer -->
+	{{ theme:partial name="footer" }}
+	<!-- End Footer -->
+	
+</footer>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.easing.1.3.js"></script>
+<script src="js/jquery.quicksand.js"></script>
+<script src="js/twitterFetcher_v10_min.js"></script>
+<script src="js/jquery.elevateZoom-3.0.8.min.js"></script>
+<!--<script src="js/jquery.cslider.js"></script>
+<script src="js/jquery.flexslider-min.js"></script>-->
+<script src="js/main.js"></script>
+
+<div id="scroll-to-top" style="display: none;"><span class="glyphicon glyphicon-circle-arrow-up"></span></div>
+
+<div class="modal fade" id="media-preview">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h4 class="modal-title">...</h4>
+      </div>
+      <div class="modal-body">
+        <p>...</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="js/jquery.cycle.all.js"></script>
+<script>
+$(function() {
+	$('#slider').cycle({
+		fx: 'fade', //'uncover',
+		sync: false,
+		speed: 1000,
+		//pause: true,
+		pager: '#slide-nav',
+		after: function(a) {
+			var html = '\
+				<a href="' + $('#slider li:visible img').data('url') + '">' + $('#slider li:visible img').data('title') + '</a>\
+			';
+			
+			$('#slide-caption').html(html);
+		}
+	});
+});
+</script>
+
+</body>
+</html>

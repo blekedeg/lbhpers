@@ -1,0 +1,109 @@
+<div id="sidebar">
+  <!-- Search -->
+  <form action="<?php echo site_url('search/results') ?>" class="search" method="get" style="margin:0 0 12px 0">
+    <div class="cl">&nbsp;</div>
+    <input type="text" name="q" class="field blink" title="Cari" placeholder="Cari..." />
+    <div class="btnp">
+      <input type="submit" value="go" />
+    </div>
+    <div class="cl">&nbsp;</div>
+  </form>
+  <!-- End Search -->
+
+  <!-- Sign In Links -->
+  <!-- <div class="links">
+    <div class="cl">&nbsp;</div>
+    <a href="#" class="left">Sign In</a> <a href="javascript:void(0)" class="right">Create account</a>
+    <div class="cl">&nbsp;</div>
+  </div> -->
+  <!-- End Sign In Links -->
+  
+  <!-- Box Latest News -->
+  <div class="box">
+    <h2>Berita Terkini</h2>
+    <ul>
+      {{ news:posts limit="5" }}
+      <li>
+        <a href="{{ url }}" class="image"><img src="{{ thumb_70x70 }}" alt="" /></a>
+        <div class="info">
+          <div class="date-post">{{ date }}</div>
+          <h5><a href="{{ url }}">{{ title }}</a></h5>
+          <!-- <p>{{ intro }}</p> -->
+        </div>
+        <div class="cl">&nbsp;</div>
+      </li>
+      {{ /news:posts }}
+    </ul>
+    <!-- <a href="#" class="up">Lihat berikutnya</a> -->
+    <div class="cl">&nbsp;</div>
+  </div>
+  <!-- End Box Latest News -->
+  
+  <!-- Box Latest Programs -->
+  <div class="box">
+    <h2>Program</h2>
+    <ul>
+      {{ program:posts limit="5" }}
+      <li>
+        <a href="{{ url }}" class="image"><img src="{{ thumb_70x70 }}" alt="" /></a>
+        <div class="info">
+          <div class="date-post">{{ date }}</div>
+          <h5><a href="{{ url }}">{{ title }}</a></h5>
+          <!-- <p>{{ short_desc }}</p> -->
+        </div>
+        <div class="cl">&nbsp;</div>
+      </li>
+      {{ /program:posts }}
+    </ul>
+    <!-- <a href="javascript:void(0)" class="up">See more</a>
+    <div class="cl">&nbsp;</div> -->
+  </div>
+  <!-- End Box Latest Programs -->
+
+  <!-- Box Calendar Posts -->
+  <div class="box">
+    <h2>Agenda</h2>
+    <ul>
+      {{ calendar:read limit="5" repeated="yes" }}
+      <li>
+        <a href="{{ url }}" class="image"><img src="{{ thumb_70x70 }}" alt="" /></a>
+        <div class="info">
+          <div class="date-post">{{ f_date_start }}</div>
+          <h5><a href="{{ url }}">{{ title }}</a></h5>
+        </div>
+        <div class="cl">&nbsp;</div>
+      </li>
+      {{ /calendar:read }}
+    </ul>
+    <!-- <a href="#" class="up">Lihat berikutnya</a> -->
+    <div class="cl">&nbsp;</div>
+  </div>
+  <!-- End Box Calendar Posts -->
+
+  <!--
+  <div class="box">
+    <h2>Program</h2>
+    <ul>
+      <li> <a href="javascript:void(0)" class="image"><img src="img/AJI.jpg" alt="" width="265" height="60" /></a>
+        <div class="cl">&nbsp;</div>
+      </li>
+      <li> <a href="javascript:void(0)" class="image"><img src="img/pers.jpg" alt="" width="265" height="60" /></a>
+        <div class="cl">&nbsp;</div>
+      </li>
+      <li> <a href="javascript:void(0)" class="image"><img src="img/legalitas.jpg" alt="" width="265" height="60"  /></a>
+        <div class="cl">&nbsp;</div>
+      </li>
+      <li> <a href="javascript:void(0)" class="image"><img src="img/Mahkamah.jpg" alt="" width="265" height="60" /></a>
+        <div class="cl">&nbsp;</div>
+      </li>
+  <li> <a href="javascript:void(0)" class="image"><img src="img/MKRI.jpg" alt="" width="265" height="60" /></a>
+        <div class="cl">&nbsp;</div>
+      </li>
+    </ul>
+    
+    <div class="cl">&nbsp;</div>
+  </div>
+  -->
+
+  <!-- End Box Latest Posts -->
+</div>

@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{{ settings:site_name }}&nbsp;&bull;&nbsp;{{ template:title }}</title>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	<base href="<?php echo base_url($this->theme->path) ?>/" />
+	<link rel="stylesheet" href="<?php echo base_url($this->theme->path) ?>/css/style.css" type="text/css" media="all" />
+	<!--[if IE]>
+	<style type="text/css" media="screen">
+	.shell {background-image: none;filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/shell-bg.png', sizingMethod='scale');}
+	.box{background-image: none;filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/dot.png', sizingMethod='scale');}
+	.transparent-frame .frame{background-image: none;filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/transparent-frame.png', sizingMethod='image');}
+	.search .field{padding-bottom:9px}
+	</style>
+	<![endif]-->
+	<script src="js/jquery/jquery.js"></script>
+	<script src="js/jquery-func.js"></script>
+	<script src="js/jquery.cycle.all.js"></script>
+</head>
+<body>
+<!-- Shell -->
+<div class="shell">
+  
+  <!-- Header -->
+  {{ theme:partial name="header" }}
+  <!-- End Header -->
+  
+  <!-- Content -->
+  <div id="content">
+    <!-- Sidebar -->
+    <div id="sidebar">
+      <!-- Search -->
+      <form action="" class="search" method="post">
+        <div class="cl">&nbsp;</div>
+        <input type="text" class="field blink" title="Cari" placeholder="Cari..." />
+        <div class="btnp">
+          <input type="submit" value="go" />
+        </div>
+        <div class="cl">&nbsp;</div>
+      </form>
+      <!-- End Search -->
+      <!-- Sign In Links -->
+      <div class="links">
+        <div class="cl">&nbsp;</div>
+        <!-- <a href="javascript:void(0)" class="left">Sign In</a> <a href="javascript:void(0)" class="right">Create account</a> -->
+        <div class="cl">&nbsp;</div>
+      </div>
+      <!-- End Sign In Links -->
+      <!-- Box Latest News -->
+      <div class="box">
+        <h2>Latest News</h2>
+        <ul>
+          <li> <a href="javascript:void(0)" class="image"><img src="img/thumb1.jpg" alt="" /></a>
+            <div class="info">
+              <h5><a href="javascript:void(0)">Lorem ipsum dolo</a></h5>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed elementum molestie urna, id scelerisque leo </p>
+            </div>
+            <div class="cl">&nbsp;</div>
+          </li>
+          <li> <a href="javascript:void(0)" class="image"><img src="img/thumb2.jpg" alt="" /></a>
+            <div class="info">
+              <h5><a href="javascript:void(0)">Dolor amet urna isque</a></h5>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed elementum molestie urna, id scelerisque leo </p>
+            </div>
+            <div class="cl">&nbsp;</div>
+          </li>
+          <li> <a href="javascript:void(0)" class="image"><img src="img/thumb3.jpg" alt="" /></a>
+            <div class="info">
+              <h5><a href="javascript:void(0)">Molestie id sceler leo</a></h5>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed elementum molestie urna, id scelerisque leo </p>
+            </div>
+            <div class="cl">&nbsp;</div>
+          </li>
+          <li> <a href="javascript:void(0)" class="image"><img src="img/thumb4.jpg" alt="" /></a>
+            <div class="info">
+              <h5><a href="javascript:void(0)">Sed elementum molesti</a></h5>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed elementum molestie urna, id scelerisque leo </p>
+            </div>
+            <div class="cl">&nbsp;</div>
+          </li>
+        </ul>
+        <a href="javascript:void(0)" class="up">Lihat selanjutnya</a>
+        <div class="cl">&nbsp;</div>
+      </div>
+      <!-- End Box Latest News -->
+      <!-- Box Latest Reviews -->
+      <div class="box">
+        <h2>Program</h2>
+        <ul>
+          <li> <a href="javascript:void(0)" class="image"><img src="img/thumb5.jpg" alt="" /></a>
+            <div class="info">
+              <h5><a href="javascript:void(0)">Lorem ipsum dolo</a></h5>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed elementum molestie urna, id scelerisque leo </p>
+            </div>
+            <div class="cl">&nbsp;</div>
+          </li>
+          <li> <a href="javascript:void(0)" class="image"><img src="img/thumb6.jpg" alt="" /></a>
+            <div class="info">
+              <h5><a href="javascript:void(0)">Dolor amet urna isque</a></h5>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed elementum molestie urna, id scelerisque leo </p>
+            </div>
+            <div class="cl">&nbsp;</div>
+          </li>
+          <li> <a href="javascript:void(0)" class="image"><img src="img/thumb7.jpg" alt="" /></a>
+            <div class="info">
+              <h5><a href="javascript:void(0)">Molestie id sceler leo</a></h5>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed elementum molestie urna, id scelerisque leo </p>
+            </div>
+            <div class="cl">&nbsp;</div>
+          </li>
+          <li> <a href="javascript:void(0)" class="image"><img src="img/thumb8.jpg" alt="" /></a>
+            <div class="info">
+              <h5><a href="javascript:void(0)">Sed elementum molesti</a></h5>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed elementum molestie urna, id scelerisque leo </p>
+            </div>
+            <div class="cl">&nbsp;</div>
+          </li>
+        </ul>
+        <a href="javascript:void(0)" class="up">See more</a>
+        <div class="cl">&nbsp;</div>
+      </div>
+      <!-- End Box Latest Reviews -->
+      <!-- Box Latest Posts -->
+      <div class="box">
+        <h2>Agenda</h2>
+        <ul>
+          <li>
+            <h5><a href="javascript:void(0)">Lorem ipsum dolo</a></h5>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed elementum molestie urna, id scelerisque leo </p>
+          </li>
+          <li>
+            <h5><a href="javascript:void(0)">Dolor amet urna isque</a></h5>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed elementum molestie urna, id scelerisque leo </p>
+          </li>
+          <li>
+            <h5><a href="javascript:void(0)">Molestie id sceler leo</a></h5>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed elementum molestie urna, id scelerisque leo </p>
+          </li>
+          <li>
+            <h5><a href="javascript:void(0)">Sed elementum molesti</a></h5>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed elementum molestie urna, id scelerisque leo </p>
+          </li>
+          <li>
+            <h5><a href="javascript:void(0)">Sed elementum molesti</a></h5>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed elementum molestie urna, id scelerisque leo </p>
+          </li>
+        </ul>
+        <a href="javascript:void(0)" class="up">See more</a>
+        <div class="cl">&nbsp;</div>
+      </div>
+	  <div class="box">
+        <h2>Program</h2>
+        <ul>
+          <li> <a href="javascript:void(0)" class="image"><img src="img/AJI.jpg" alt="" width="265" height="60" /></a>
+            <div class="cl">&nbsp;</div>
+          </li>
+          <li> <a href="javascript:void(0)" class="image"><img src="img/pers.jpg" alt="" width="265" height="60" /></a>
+            <div class="cl">&nbsp;</div>
+          </li>
+          <li> <a href="javascript:void(0)" class="image"><img src="img/legalitas.jpg" alt="" width="265" height="60"  /></a>
+            <div class="cl">&nbsp;</div>
+          </li>
+          <li> <a href="javascript:void(0)" class="image"><img src="img/Mahkamah.jpg" alt="" width="265" height="60" /></a>
+            <div class="cl">&nbsp;</div>
+          </li>
+		  <li> <a href="javascript:void(0)" class="image"><img src="img/MKRI.jpg" alt="" width="265" height="60" /></a>
+            <div class="cl">&nbsp;</div>
+          </li>
+        </ul>
+        
+        <div class="cl">&nbsp;</div>
+      </div>
+	  
+      <!-- End Box Latest Posts -->
+    </div>
+    <!-- End Sidebar -->
+    <!-- Main -->
+    <div id="main">
+      <!-- Top Image -->
+      <!-- <ul class="navigate">
+        <li class="active"><a href="javascript:void(0)">1</a></li>
+        <li><a href="javascript:void(0)">2</a></li>
+        <li><a href="javascript:void(0)">3</a></li>
+        <li><a href="javascript:void(0)">4</a></li>
+        <li><a href="javascript:void(0)">5</a></li>
+        <li><a href="javascript:void(0)">6</a></li>
+      </ul> -->
+	  
+    <div class="transparent-frame" style="position:relative">
+			<!-- <div class="frame">&nbsp;</div> -->
+			<div id="slide-nav"></div>
+			<ul id="slider">
+				<?php foreach ($page->news_posts as $val) { ?>
+        <li><img src="img/sls.jpg"  width="628" height="340" data-title="<?php echo $val->title ?>" data-desc="<?php echo $val->intro ?>" data-url="<?php echo $val->url ?>" /></li>
+				<!-- <li><img src="img/car1.jpg"  width="628" height="340" data-title="dolor sit amet" data-desc="lorem ipsum kolor si memet" data-url="http://www.okezone.com/" /></li> -->
+        <?php } ?>
+      </ul>
+			<div id="slide-caption"></div>
+		</div>
+		<div class="cl">&nbsp;</div>
+		<style>
+		#slide-caption{position:absolute; background:rgba(0, 0, 0, 0.7); color:#ffffff; padding:10px; bottom:0; z-index:600; width:608px;}
+		#slide-caption a{font-weight:bold;}
+		#slide-nav{position:absolute; top:10px; right:10px; z-index:600;}
+		#slide-nav a{background:#ffcc00; color:#ffffff; padding:2px 4px; margin:0 0 0 10px; border:1px solid #cccccc; text-decoration:none;}
+		#slide-nav a.activeSlide{background:green;}
+		</style>
+		<!-- End Top Image -->
+	  
+      <!-- Box -->
+      <div class="box">
+        <h2>Tuning</h2>
+        <ul class="line">
+          <li> <a class="frm" href="javascript:void(0)"><img src="img/car1.jpg" alt="" /></a> <a href="javascript:void(0)">Sed elementum molesti</a> </li>
+          <li> <a class="frm" href="javascript:void(0)"><img src="img/car2.jpg" alt="" /></a> <a href="javascript:void(0)">Dolor amet urna isque</a> </li>
+          <li> <a class="frm" href="javascript:void(0)"><img src="img/car3.jpg" alt="" /></a> <a href="javascript:void(0)">Lorem ipsum dolo</a> </li>
+        </ul>
+        <div class="cl">&nbsp;</div>
+      </div>
+      <!-- End Box -->
+      <!-- Box -->
+      <div class="box">
+        <h2>KASUS</h2>
+        <ul>
+          <li> <a href="javascript:void(0)" class="image"><img src="img/car4.jpg" alt="" /></a>
+            <div class="info">
+              <h4><a href="javascript:void(0)">Dolor amet urna isque</a></h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed elementum molestie urna, id scelerisque leo sodales sit amet. Curabitur volutpat lorem euismod nunc tincidunt condimentum.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed elementum molestie urna.</p>
+              <a class="up">Baca selanjutnya</a> </div>
+            <div class="cl">&nbsp;</div>
+          </li>
+          <li> <a href="javascript:void(0)" class="image"><img src="img/car5.jpg" alt="" /></a>
+            <div class="info">
+              <h4><a href="javascript:void(0)">Lorem dolor consectetur elit.</a></h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed elementum molestie urna, id scelerisque leo sodales sit amet. Curabitur volutpat lorem euismod nunc tincidunt condimentum.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed elementum molestie urna.</p>
+              <a class="up">Baca selanjutnya</a> </div>
+            <div class="cl">&nbsp;</div>
+          </li>
+          <li> <a href="javascript:void(0)" class="image"><img src="img/car6.jpg" alt="" /></a>
+            <div class="info">
+              <h4><a href="javascript:void(0)">Sed elementum molestie urna</a></h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed elementum molestie urna, id scelerisque leo sodales sit amet. Curabitur volutpat lorem euismod nunc tincidunt condimentum.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed elementum molestie urna.</p>
+              <a class="up">Baca selanjutnya</a> </div>
+            <div class="cl">&nbsp;</div>
+          </li>
+          <li> <a href="javascript:void(0)" class="image"><img src="img/car7.jpg" alt="" /></a>
+            <div class="info">
+              <h4><a href="javascript:void(0)">Tincidunt conimentum ipsum</a></h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed elementum molestie urna, id scelerisque leo sodales sit amet. Curabitur volutpat lorem euismod nunc tincidunt condimentum.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed elementum molestie urna.</p>
+              <a class="up">Baca selanjutnya</a> </div>
+            <div class="cl">&nbsp;</div>
+          </li>
+        </ul>
+        <a href="javascript:void(0)" class="up">See more</a>
+        <div class="cl">&nbsp;</div>
+      </div>
+      <!-- End Box -->
+    </div>
+    <!-- End Main -->
+    <div class="cl">&nbsp;</div>
+  </div>
+  <!-- End Content -->
+  
+  <!-- Footer -->
+  {{ theme:partial name="footer" }}
+  <!-- End Footer -->
+  
+</div>
+<!-- End Shell -->
+
+<script>
+$(function() {
+	$('#slider').cycle({
+		fx: 'fade', //'uncover',
+		sync: false,
+		speed: 1000,
+		//pause: true,
+		pager: '#slide-nav',
+		after: function(a) {
+			var html = '\
+				<a href="' + $('#slider li:visible img').data('url') + '">' + $('#slider li:visible img').data('title') + '</a>\
+				<p>' + $('#slider li:visible img').data('desc') + '</p>\
+			';
+			
+			$('#slide-caption').html(html);
+		}
+	});
+});
+
+var image = document.getElementsByTagName('img');
+for (var i = 0; i < image.length; i++) {
+	image[i].src = image[i].src + '?ts=' + new Date().getTime();
+}
+</script>
+</body>
+</html>

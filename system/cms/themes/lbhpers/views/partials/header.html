@@ -1,0 +1,81 @@
+<style>
+.dropdown-menu>li>a{padding:6px; 8px;}
+.nav>li>a{padding:6px 8px; font-size:14px; font-weight:bold;}
+.navbar .dropdown-menu>li>a, .navbar .dropdown-menu>li>a{font-size:12px;}
+.logo{width:646px; height:110px;}
+.logo img{height:100px;}
+</style>
+
+<div id="header" class="container">
+    <div class="row top-banget">
+		<div class="pull-left" id="clock">&nbsp;</div>
+		<div class="pull-right"></div>
+    </div>
+    
+	<div class="row">
+		<div class="col-md-8 logo">
+			<a href="<?php echo site_url('home') ?>" id="logo"><img src="img/header.jpg" alt="" class="img-responsive"></a>
+		</div>
+		<div class="col-md-4">
+			<form method="get" action="<?php echo site_url('search/results') ?>">
+				<div class="top-search">
+					<input type="text" name="q" value="" class="form-control input-search" placeholder="Pencarian...">
+					<button type="submit" class="btn btn-search"><span class="glyphicon glyphicon-search"></span></button>
+				</div>
+			</form>
+			<div class="clearfix"></div>
+			<div class="social-top32">
+				<ul class="">
+					<li data-id="facebook_link"><a class="social-top-icon facebook_link" href="https://www.facebook.com/ajiindonesia" target="_blank"></a></li>
+					<li data-id="twitter_link"><a class="social-top-icon twitter_link" href="https://twitter.com/AJIIndo" target="_blank"></a></li>
+					<li data-id="rss_link"><a class="social-top-icon rss_link" href="http://aji.or.id/rss/berita" target="_blank"></a></li>
+					<li data-id="flickr_link"><a class="social-top-icon flickr_link" href="http://www.youtube.com/channel/UCOYDdIfokhiWrKSXeji6apw" target="_blank"></a></li>
+				</ul>
+            </div>      
+		</div>
+    </div>
+	
+	<div class="row">
+		<div class="navbar navbar-inverted navbar-aji" role="navigation">
+		
+			<div id="aji-menu" class="navbar-collapse collapse">
+
+			  <ul class="nav navbar-nav">
+			  {{ navigation:links group="header" more_class="dropdown" dropdown_class="dropdown-menu" }}
+			  </ul>
+			  
+			</div>
+		
+		</div>
+	</div>
+
+</div>
+
+<script>
+for (var i = 0; i < document.getElementsByClassName('dropdown').length; i++) {
+	document.getElementsByClassName('dropdown')[i].children[0].innerHTML += ' <b class="caret"></b>'
+}
+
+var serverTime = <?php echo time() * 1000 ?>;
+var localTime = +Date.now();
+var timeDiff = serverTime - localTime;
+
+setInterval(function () {
+    var realtime = +Date.now() + timeDiff;
+    var date = new Date(realtime);
+	
+	var year = date.getFullYear();
+	var month = date.getMonth();
+	var day = date.getDate();
+    var hours = ("0" + date.getHours()).slice(-2);
+    var minutes = ("0" + date.getMinutes()).slice(-2);
+    var seconds = ("0" + date.getSeconds()).slice(-2);
+	
+	var monthName = ["Januari", "February", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "Nopember", "Desember"];
+	var weekday = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jum'at", "Sabtu"];
+	
+    var formattedTime = weekday[date.getDay()] + ' ' + day + ' ' + monthName[month] + ' ' + year + ', ' + hours + ':' + minutes + ':' + seconds + ' WIB';
+
+	document.getElementById('clock').innerHTML = formattedTime;
+}, 1000);
+</script>
